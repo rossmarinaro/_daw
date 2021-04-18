@@ -22,7 +22,7 @@ module.exports = {
         test: /\.(gif|png|ogg|jpe?g|svg|xml|mp3|woff)$/i, 
         use: 'file-loader' ,
         exclude: [
-          path.resolve(__dirname, '../src/assets/meatballin', '../src/meatballin')
+          path.resolve(__dirname, '../src/daw/assets', '../src/daw')
         ]
       },
       {

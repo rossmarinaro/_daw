@@ -2,19 +2,20 @@
 
 @font-face {
     font-family: "bangers";
-    src: url("./assets/fonts/bangers-regular-webfont.woff") format("woff")
+    src: url("./sampler/assets/fonts/bangers-regular-webfont.woff") format("woff")
 }
 @font-face {
     font-family: "digitizer";
-    src: url("./assets/fonts/digitizer.woff") format("woff");
+    src: url("./sampler/assets/fonts/digitizer.woff") format("woff");
 }
-html, body{
+html, body, svg{
 	background: #000000;
 	margin: 0;
 	padding: 0;
 	width: 100vw;
 	height: 100vh !important;
 	overflow: hidden;
+	font-family: 'digitizer' , 'Arial Black', sans-serif;
 }
 h1, noscript{
 	position: absolute;
