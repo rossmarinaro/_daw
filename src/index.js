@@ -1,7 +1,8 @@
 import './style.css';
-import './daw/main/inputs.js';
-import {synthesizers} from './daw/main/main.js';
-import {samplerInputs} from './daw/main/inputs.js';
+import './daw/main/main.js';
+
+
+
 
 //import Phaser from 'phaser';
 

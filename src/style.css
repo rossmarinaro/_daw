@@ -15,7 +15,6 @@ html, body, svg{
 	width: 100vw;
 	height: 100vh !important;
 	overflow: hidden;
-	font-family: 'digitizer' , 'Arial Black', sans-serif;
 }
 h1, noscript{
 	position: absolute;
@@ -24,3 +23,22 @@ h1, noscript{
 	font-family: 'bangers' , 'Arial Black', sans-serif;
 	color: #FFFFFF;
 }
+text{
+	user-select: none;
+}
+form > input{
+	position: fixed;
+	top: 50%;
+	left: 40.3%;
+} 
+
+
+/* sampler */
+	.sampler-text{
+		fill: #ffffff;
+		stroke:  #000000; 
+		stroke-width: 0.04rem;
+	}
+
+
+	
