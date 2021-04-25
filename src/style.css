@@ -9,7 +9,7 @@
     src: url("./sampler/assets/fonts/digitizer.woff") format("woff");
 }
 html, body, svg{
-	background: #000000;
+	background: #222a3b;
 	margin: 0;
 	padding: 0;
 	width: 100vw;
