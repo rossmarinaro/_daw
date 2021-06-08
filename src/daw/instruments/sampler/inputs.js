@@ -311,26 +311,6 @@ export const initInputs = function()
             },
             triggerPad: function(e, pad, trigger_i)
             {
-                switch (trigger_i)
-                { 
-                    case 'touchstart' : 
-                                        pad.style.opacity = 0.4;
-                                        SAMPLER.Synths.triggerAttack(); 
-                    break;
-                    case 'touchend' : 
-                                        e.preventDefault(); 
-                                        pad.style.opacity = 0;
-                                        SAMPLER.Synths.triggerRelease(); 
-                    break;
-                    case 'mousedown' : case 'keydown' :  
-                                        pad.style.opacity = 0.4;
-                                        SAMPLER.Synths.triggerAttack();
-                    break;
-                    case 'mouseup' : case 'mouseout' : case 'keyup' :
-                                        pad.style.opacity = 0; 
-                                        SAMPLER.Synths.triggerRelease();
-                    break;  
-                }
             //push current note
                 switch (pad.id)
                 {
@@ -542,6 +522,27 @@ export const initInputs = function()
                             case 'B' : SAMPLER.Props.notePressed = `F#${SAMPLER.Props.currentOctave * 1.25}`; break;
                         }
                     break;
+                }
+               ////trigger types
+                  switch (trigger_i)
+                { 
+                    case 'touchstart' : 
+                                        pad.style.opacity = 0.4;
+                                        SAMPLER.Synths.triggerAttack(); 
+                    break;
+                    case 'touchend' : 
+                                        e.preventDefault(); 
+                                        pad.style.opacity = 0;
+                                        SAMPLER.Synths.triggerRelease(); 
+                    break;
+                    case 'mousedown' : case 'keydown' :  
+                                        pad.style.opacity = 0.4;
+                                        SAMPLER.Synths.triggerAttack();
+                    break;
+                    case 'mouseup' : case 'mouseout' : case 'keyup' :
+                                        pad.style.opacity = 0; 
+                                        SAMPLER.Synths.triggerRelease();
+                    break;  
                 }
             },
             update: function()
