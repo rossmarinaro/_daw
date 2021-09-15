@@ -1,21 +1,30 @@
 /******* AMP *******/ 
 
 const AMP = {
+  context: null,
+  nodes: {
+    analyserNode: null,
+    gainNode: null,
+    bassEQ: null,
+    midEQ: null,
+    trebleEQ: null
+  },
   features: {
     volume: document.getElementById('volume'),
     bass: document.getElementById('bass'),
     mid: document.getElementById('mid'),
     treble: document.getElementById('treble'),
-    visualizer: document.getElementById('visualizer'),
-    context: new AudioContext(),
-    analyserNode: new AnalyserNode(context, {fftSize: 256}),
-    gainNode: new GainNode(context, { gain: volume.value}),
-    bassEQ: new BiquadFilterNode(context, {type: 'lowshelf', frequency: 500, gain: bass.value}),
-    midEQ: new BiquadFilterNode(context, {type: 'peaking', Q: Math.SQRT1_2, frequency: 1500, gain: mid.value}),
-    trebleEQ: new BiquadFilterNode(context, {type: 'highshelf', frequency: 3000, gain: treble.value})
+    visualizer: document.getElementById('visualizer')
   },
   init: function()
   {
+    AMP.context = new AudioContext();
+    AMP.nodes.analyserNode = new AnalyserNode(AMP.context, {fftSize: 256});
+    AMP.nodes.gainNode = new GainNode(AMP.context, { gain: AMP.features.volume.value});
+    AMP.nodes.bassEQ = new BiquadFilterNode(AMP.context, {type: 'lowshelf', frequency: 500, gain: bass.value});
+    AMP.nodes.midEQ = new BiquadFilterNode(AMP.context, {type: 'peaking', Q: Math.SQRT1_2, frequency: 1500, gain: mid.value});
+    AMP.nodes.trebleEQ = new BiquadFilterNode(AMP.context, {type: 'highshelf', frequency: 3000, gain: treble.value});
+    
     AMP.setupEventListeners();
     AMP.setupContext();
     AMP.resize();
