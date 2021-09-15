@@ -36,12 +36,12 @@ const AMP = {
     if (context.state === 'suspended') await context.resume();
     /* const source =  */context.createMediaStreamSource(guitar)
     //source
-      .connect(AMP.features.bassEQ)
-      .connect(AMP.features.midEQ)
-      .connect(AMP.features.trebleEQ)
-      .connect(AMP.features.gainNode)
-      .connect(AMP.features.analyserNode)
-      .connect(AMP.features.context.destination);
+      .connect(AMP.nodes.bassEQ)
+      .connect(AMP.nodes.midEQ)
+      .connect(AMP.nodes.trebleEQ)
+      .connect(AMP.nodes.gainNode)
+      .connect(AMP.nodes.analyserNode)
+      .connect(AMP.context.destination);
   },
   getGuitar: function() 
   {
@@ -102,6 +102,10 @@ const AMP = {
     AMP.features.visualizer.height = AMP.features.visualizer.clientHeight * window.devicePixelRatio
   }
 }
+
+
+
+
 
 
 
